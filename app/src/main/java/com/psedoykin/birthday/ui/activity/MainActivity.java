@@ -1,7 +1,9 @@
-package com.psedoykin.birthday;
+package com.psedoykin.birthday.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.psedoykin.birthday.R;
 
 public class MainActivity extends AppCompatActivity {
 
