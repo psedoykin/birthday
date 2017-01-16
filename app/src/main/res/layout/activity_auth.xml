@@ -11,4 +11,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.psedoykin.birthday.ui.activity.AuthActivity">
 
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/auth_button_layout"
+        android:background="#177bdf"/>
+
+
+    <LinearLayout
+        android:id="@+id/auth_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+    >
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:text="Войти"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:text="Зарегаться"/>
+
+
+
+    </LinearLayout>
+
+
+
 </RelativeLayout>
