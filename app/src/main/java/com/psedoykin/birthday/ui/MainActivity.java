@@ -1,4 +1,4 @@
-package com.psedoykin.birthday.ui.activity;
+package com.psedoykin.birthday.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.psedoykin.birthday.ui.fragment.auth;
+package com.psedoykin.birthday.ui.fragment;
 
 
 import android.os.Bundle;
