@@ -18,7 +18,7 @@ import com.psedoykin.birthday.ui.adapter.DotsListViewAdapter;
 import com.psedoykin.birthday.ui.base.BaseFragment;
 
 
-public class WelcomeFragment extends BaseFragment {
+public class WelcomeFragment extends BaseFragment implements View.OnClickListener {
 
     public final static String TAG = WelcomeFragment.class.getSimpleName();
 
@@ -57,7 +57,23 @@ public class WelcomeFragment extends BaseFragment {
 
             }
         });
+
+        mBinding.loginButton.setOnClickListener(this);
+        mBinding.authButton.setOnClickListener(this);
         return mBinding.getRoot();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.auth_button:
+                getFragmentManager().beginTransaction().replace(R.id.frame_container, RegistrationFragment.newInstance()).addToBackStack(RegistrationFragment.TAG).commit();
+                break;
+            case R.id.login_button:
+                getFragmentManager().beginTransaction().replace(R.id.frame_container, LoginFragment.newInstance()).addToBackStack(LoginFragment.TAG).commit();
+                break;
+        }
+
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
