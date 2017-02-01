@@ -1,0 +1,5 @@
+<resources>
+
+    <integer name="duration_anim">500</integer>
+
+</resources>
