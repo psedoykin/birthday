@@ -1,12 +1,15 @@
 package com.psedoykin.birthday.ui.adapter;
 
-import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.psedoykin.birthday.databinding.DotItemBinding;
+import com.psedoykin.birthday.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class DotsListViewAdapter extends RecyclerView.Adapter<DotsListViewAdapter.ViewHolderImpl> {
 
@@ -19,17 +22,16 @@ public class DotsListViewAdapter extends RecyclerView.Adapter<DotsListViewAdapte
 
     @Override
     public ViewHolderImpl onCreateViewHolder(ViewGroup parent, int viewType) {
-        DotItemBinding dotItemBinding = DotItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new ViewHolderImpl(dotItemBinding.getRoot());
+        return new ViewHolderImpl(LayoutInflater.from(parent.getContext()).inflate(R.layout.dot_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(ViewHolderImpl holder, int position) {
 
         if (position == mCurrentId) {
-            holder.dotItemBinding.dotIndicator.setAlpha(1f);
+            holder.mIndicator.setAlpha(1f);
         } else {
-            holder.dotItemBinding.dotIndicator.setAlpha(0.5f);
+            holder.mIndicator.setAlpha(0.5f);
         }
     }
 
@@ -47,11 +49,11 @@ public class DotsListViewAdapter extends RecyclerView.Adapter<DotsListViewAdapte
 
     public class ViewHolderImpl extends RecyclerView.ViewHolder {
 
-        public DotItemBinding dotItemBinding;
+        @BindView(R.id.dot_indicator) ImageView mIndicator;
 
         public ViewHolderImpl(View view) {
             super(view);
-            dotItemBinding = DataBindingUtil.bind(view);
+            ButterKnife.bind(this, view);
         }
     }
 }
