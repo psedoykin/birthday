@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/main"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_inbox_black_24dp"
+            android:title="@string/main_title"/>
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_event_black_24dp"
+            android:title="@string/calendar_title"/>
+        <item
+            android:id="@+id/nav_type_event"
+            android:icon="@drawable/ic_subtitles_black_24dp"
+            android:title="@string/type_events_title"/>
+        <item
+            android:id="@+id/nav_card"
+            android:icon="@drawable/ic_card_giftcard_black_24dp"
+            android:title="@string/cards_title"/>
+    </group>
+
+    <group android:id="@+id/second">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/settings_title"/>
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help_black_24dp"
+            android:title="@string/help_title"/>
+    </group>
+</menu>

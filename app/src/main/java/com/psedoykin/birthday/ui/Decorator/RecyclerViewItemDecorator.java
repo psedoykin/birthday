@@ -1,4 +1,4 @@
-package com.psedoykin.birthday.ui.Decorator;
+package com.psedoykin.birthday.ui.decorator;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

@@ -1,17 +1,20 @@
 package com.psedoykin.birthday;
 
 import android.app.Application;
-import android.content.Context;
 
 public class App extends Application {
 
-    private static App mInstance;
+    private ApplicationComponent mApplicationComponent;
 
-    public App() {
-        mInstance = this;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mApplicationComponent = DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule(this))
+                .build();
     }
 
-    public static Context getAppContext() {
-        return mInstance.getApplicationContext();
+    public ApplicationComponent getApplicationComponent() {
+        return mApplicationComponent;
     }
 }

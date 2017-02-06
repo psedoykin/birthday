@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.psedoykin.birthday.R;
-import com.psedoykin.birthday.ui.Decorator.RecyclerViewItemDecorator;
 import com.psedoykin.birthday.ui.adapter.DotsListViewAdapter;
 import com.psedoykin.birthday.ui.base.BaseFragment;
+import com.psedoykin.birthday.ui.decorator.RecyclerViewItemDecorator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
