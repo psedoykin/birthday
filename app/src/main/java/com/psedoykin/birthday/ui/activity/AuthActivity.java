@@ -12,18 +12,23 @@ import com.psedoykin.birthday.ui.MainActivity;
 import com.psedoykin.birthday.ui.base.BaseActivity;
 import com.psedoykin.birthday.ui.fragment.WelcomeFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class AuthActivity extends BaseActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Bundle mSavedInstanceState;
 
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("");
         mSavedInstanceState = savedInstanceState;
         mAuth = FirebaseAuth.getInstance();

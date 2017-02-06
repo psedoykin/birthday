@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.psedoykin.birthday.R;
+
 public class BaseActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
     protected FragmentManager mFragmentManager;
@@ -33,5 +35,14 @@ public class BaseActivity extends AppCompatActivity implements FragmentManager.O
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    protected void showFragment(BaseFragment fragment, String TAG) {
+
+        if (mFragmentManager == null) {
+            mFragmentManager = getSupportFragmentManager();
+        }
+        mFragmentManager.beginTransaction().setCustomAnimations(R.anim.open_fragment, R.anim.close_fragment, R.anim.open_fragment, R.anim.close_fragment)
+                .replace(R.id.frame_container, fragment).addToBackStack(TAG).commit();
     }
 }
